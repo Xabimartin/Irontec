@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GithubService } from "./services/github.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  users = [];
+  constructor(private githubService:GithubService){}
+  getUsers(){
+    this.githubService.getdata().subscribe((data)=>{
+      console.log(data)
+    })
+  }
 }
