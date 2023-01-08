@@ -7,9 +7,12 @@ export class GithubService {
 
   constructor(private http:HttpClient) { }
 
-
   getdata(){
     const url = "https://api.github.com/users"
+    return this.http.get(url)
+  }
+  getOne(){
+    const url = "https://api.github.com/users/Xabimartin"
     return this.http.get(url)
   }
 }

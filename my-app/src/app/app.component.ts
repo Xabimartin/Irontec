@@ -8,11 +8,23 @@ import { GithubService } from "./services/github.service";
 })
 export class AppComponent {
   title = 'my-app';
-  users = [];
+  users:any = [];
+  buttonType:string = "";
+  buttonColor:string = "";
   constructor(private githubService:GithubService){}
+  clear() {
+    this.users=[]
+  }
   getUsers(){
     this.githubService.getdata().subscribe((data)=>{
       console.log(data)
+      this.users = data
+    })
+  }
+  getUser(){
+    this.githubService.getOne().subscribe((data)=>{
+      console.log(data)
+      this.users = data
     })
   }
 }

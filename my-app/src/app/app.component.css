@@ -1,0 +1,8 @@
+.toolbar{
+    background-color: #282828;
+}
+.content{
+    width: 100%;
+    display: flex;
+    background-color: #E6E5E5;
+}
